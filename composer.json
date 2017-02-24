@@ -2,6 +2,7 @@
     "name": "richardromain/webprojectinstaller",
     "description": "Web project installer",
     "keywords": ["laravel", "symfony", "adminLte"],
+    "license": "MIT",
     "authors": [
         {
             "name": "Romain Richard",
