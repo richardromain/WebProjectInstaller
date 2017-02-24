@@ -1,0 +1,23 @@
+{
+    "name": "richardromain/webprojectinstaller",
+    "description": "Web project installer",
+    "keywords": ["laravel", "symfony", "adminLte"],
+    "authors": [
+        {
+            "name": "Romain Richard",
+            "email": "romain.richard.19@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "WebProjectInstaller\\Console\\": "src/"
+        }
+    },
+    "require": {
+        "symfony/console": "^3.2",
+        "symfony/process": "^3.2"
+    },
+    "bin": [
+        "webprojectinstaller"
+    ]
+}
