@@ -8,6 +8,6 @@ if (file_exists(__DIR__.'/../../autoload.php')) {
 }
 
 $app = new Symfony\Component\Console\Application('Web Project Installer', '1.0.0');
-$app->add(new WebProjectInstaller\Console\NewCommand);
+$app->add(new WebProjectInstaller\Console\InstallCommand);
 
 $app->run();
