@@ -157,6 +157,9 @@ class InstallLaravel {
                     $this->output->writeln('<error>Generating assets failed.</error>');
                     $this->output->writeln('<error>'.$process->getOutput().'</error>');
                 }
+                if ($this->auth) {
+                    /* TODO: Copy of views auth folder in laravel install */
+                }
                 break;
         }
     }
