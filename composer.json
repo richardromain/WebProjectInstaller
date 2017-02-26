@@ -16,7 +16,8 @@
     },
     "require": {
         "symfony/console": "^3.2",
-        "symfony/process": "^3.2"
+        "symfony/process": "^3.2",
+        "symfony/filesystem": "^3.2"
     },
     "bin": [
         "webprojectinstaller"
