@@ -6,6 +6,7 @@ use Symfony\Component\Console\Question\Question;
 use Symfony\Component\Process\Process;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 use Symfony\Component\Filesystem\Filesystem;
+use Symfony\Component\Finder\Finder;
 
 class InstallLaravel {
     private $input;
@@ -14,6 +15,7 @@ class InstallLaravel {
     private $directory;
     private $auth;
     private $fs;
+    private $finder;
 
     /**
      * InstallLaravel constructor.
@@ -30,6 +32,7 @@ class InstallLaravel {
         $this->directory = $directory;
         $this->auth = false;
         $this->fs = new Filesystem();
+        $this->finder = new Finder();
 
         $this->configureEnvLaravel();
         $this->enableAuthFeatureLaravel();
@@ -159,6 +162,10 @@ class InstallLaravel {
                 }
                 if ($this->auth) {
                     /* TODO: Copy of views auth folder in laravel install */
+                    $this->finder->files()->in('src/files/laravel/adminlte/views/auth');
+                    foreach ($this->finder as $file) {
+                        $this->fs->copy($file->getPathname(), $this->directory.'/resources/views/auth/'.$file->getRelativePathname(), true);
+                    }
                 }
                 break;
         }
